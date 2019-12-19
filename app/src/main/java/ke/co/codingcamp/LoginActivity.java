@@ -121,7 +121,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @OnClick(R.id.login_button)
     public void onLogin(){
-        startActivity(new Intent( this, SignUpActivity.class));
+
+        //Validate input values from user;
+        String user_name = userName.getText().toString().trim();
+        String user_password = password.getText().toString().trim();
+
+        if (user_name.length() < 5){
+
+            //warning to the user
+            userName.setError("Please enter a valid user name");
+        }else if (user_password.length() < 8){
+
+            //warning to the user (at least 8 characters);
+            password.setError("Password must be at least 8 characters long.");
+        }else{
+
+            login(user_name, user_password);
+        }
+    }
+
+    private void login(String username, String password){
+
+        //if user exists, then go to house list activity
+        //else show warning message
+        boolean userExists = true;
+        if (userExists){
+            //go to next activity
+            Intent intent = new Intent(this, SignUpActivity.class);
+            finish();
+        }else{
+            //warn and ask to register;
+        }
     }
 
     @Override

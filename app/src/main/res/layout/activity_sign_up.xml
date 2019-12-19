@@ -37,7 +37,6 @@
             android:id="@+id/full_names"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:ems="10"
             android:paddingStart="16dp"
             android:textSize="18sp"
             android:textColor="@color/color_white"

@@ -119,6 +119,7 @@ public class SignUpActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+
         mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
