@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">HomeFinder</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login">LOGIN</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="register_now">Register Now</string>
+
+    <string name="title_activity_sign_up">SIGN UP</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="full_names">Full names</string>
+    <string name="email_address">Email address</string>
+    <string name="phone_number">Phone number</string>
+    <string name="terms_of_service_prefix">I have read the</string>
+    <string name="terms_of_service_suffix">terms of service</string>
+</resources>
