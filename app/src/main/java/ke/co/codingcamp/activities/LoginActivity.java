@@ -18,6 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ke.co.codingcamp.R;
+import ke.co.codingcamp.ui.House;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -117,6 +118,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mContentView = findViewById(R.id.content_view);
 
         ButterKnife.bind(this);
+
+        House plazaHouse = new House();
+
+        plazaHouse.setId(1);
+        plazaHouse.setDescription("Description");
+        plazaHouse.setLocation("Karen");
+        plazaHouse.setFloor(3);
+        plazaHouse.setIs_deposit_required(true);
+        plazaHouse.setPrice(300000);
+        plazaHouse.setProperty_owner("Elisha Chirchir");
+        plazaHouse.setPhone_number("0717121909");
+        plazaHouse.setSize_in_square_feet(5000);
+        plazaHouse.setType_of_house("Bungalow");
+        plazaHouse.setNumber_of_rooms(8);
 
     }
 

@@ -14,6 +14,10 @@ public class House {
     private boolean is_deposit_required;
     private String description;
 
+    public House() {
+
+    }
+
     public long getId() {
         return id;
     }

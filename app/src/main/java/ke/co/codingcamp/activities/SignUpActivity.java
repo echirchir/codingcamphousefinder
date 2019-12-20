@@ -3,23 +3,46 @@ package ke.co.codingcamp.activities;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import ke.co.codingcamp.R;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
+
 public class SignUpActivity extends AppCompatActivity {
-    /**
-     * Whether or not the system UI should be auto-hidden after
-     * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
-     */
+
+    @BindView(R.id.full_names)
+    EditText fullNames;
+
+    @BindView(R.id.email_address)
+    EditText emailAddress;
+
+    @BindView(R.id.phone_number)
+    EditText phoneNumber;
+
+    @BindView(R.id.user_name)
+    EditText userName;
+
+    @BindView(R.id.password)
+    EditText password;
+
+    @BindView(R.id.terms_of_service)
+    CheckBox termsOfService;
+
+    @BindView(R.id.terms_link)
+    TextView termsLink;
+
     private static final boolean AUTO_HIDE = true;
 
     /**
@@ -95,6 +118,40 @@ public class SignUpActivity extends AppCompatActivity {
         mVisible = true;
         mContentView = findViewById(R.id.content_view);
 
+        termsLink.setMovementMethod(LinkMovementMethod.getInstance());
+
+    }
+
+    @OnClick(R.id.sign_up_button)
+    public void onSignUp(){
+
+        //validation of input
+        String full_names = fullNames.getText().toString().trim();
+        String email_address = emailAddress.getText().toString().trim();
+        String phone_number = phoneNumber.getText().toString().trim();
+        String user_name = userName.getText().toString().trim();
+        String user_password = password.getText().toString().trim();
+        boolean isChecked = termsOfService.isChecked();
+
+        if (full_names.length() < 2){
+
+        }else if (!isValidEmail(email_address)){
+
+        }else if (phone_number.length() < 10){
+
+        }else if (user_name.length() < 5){
+
+        }else if (user_password.length() < 8){
+
+        }else if (!isChecked){
+
+        }
+
+
+    }
+
+    private boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 
     @Override
