@@ -18,5 +18,11 @@
     <string name="phone_number">Phone number</string>
     <string name="terms_of_service_prefix">I have read the</string>
     <string name="terms_of_service_suffix"><a href="https://www.google.com/">terms of service</a></string>
+    <string name="full_name_error">Full name cannot be less than 2 characters!</string>
+    <string name="email_address_error">Your email address is invalid!</string>
+    <string name="invalid_phone_error">You entered an invalid phone number!</string>
+    <string name="user_name_error">Your username must be at least 5 characters!</string>
+    <string name="invalid_password_error">Password must be at least 8 characters!</string>
+    <string name="confirm_terms_error">You did not read terms of service!</string>
 
 </resources>

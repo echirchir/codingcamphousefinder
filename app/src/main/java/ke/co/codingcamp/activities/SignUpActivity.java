@@ -1,6 +1,7 @@
 package ke.co.codingcamp.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -17,7 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.realm.Realm;
 import ke.co.codingcamp.R;
+import ke.co.codingcamp.db.User;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -134,16 +137,37 @@ public class SignUpActivity extends AppCompatActivity {
         boolean isChecked = termsOfService.isChecked();
 
         if (full_names.length() < 2){
-
+            fullNames.setError(getString(R.string.full_name_error));
         }else if (!isValidEmail(email_address)){
-
+            emailAddress.setError(getString(R.string.email_address_error));
         }else if (phone_number.length() < 10){
-
+            phoneNumber.setError(getString(R.string.invalid_phone_error));
         }else if (user_name.length() < 5){
-
+            userName.setError(getString(R.string.user_name_error));
         }else if (user_password.length() < 8){
-
+            password.setError(getString(R.string.invalid_password_error));
         }else if (!isChecked){
+            termsOfService.setError(getString(R.string.confirm_terms_error));
+        }else{
+
+            //save to the database;
+            User user = new User();
+            user.setFull_name(full_names);
+            user.setEmail_address(email_address);
+            user.setPhone_number(phone_number);
+            user.setUser_name(user_name);
+            user.setPassword(user_password);
+            user.setAccepted_terms_of_service(true);
+            user.setLocation("NAIROBI");
+
+            Realm realm = Realm.getDefaultInstance();
+
+            realm.beginTransaction();
+            realm.copyToRealm(user);
+            realm.commitTransaction();
+
+            Intent intent = new Intent(this, SignUpActivity.class);
+            startActivity(intent);
 
         }
 
