@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:id="@+id/content_view"
         android:background="@color/color_white"
-        tools:context=".SignUpActivity">
+        tools:context=".activities.SignUpActivity">
 
         <ImageView
             android:id="@+id/logo"

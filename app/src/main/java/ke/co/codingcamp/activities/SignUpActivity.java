@@ -1,4 +1,4 @@
-package ke.co.codingcamp;
+package ke.co.codingcamp.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import ke.co.codingcamp.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

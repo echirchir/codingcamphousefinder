@@ -1,4 +1,4 @@
-package ke.co.codingcamp;
+package ke.co.codingcamp.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import ke.co.codingcamp.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
